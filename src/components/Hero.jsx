@@ -1,12 +1,13 @@
+import Spline from "@splinetool/react-spline";
 import { ArrowRight, Star } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50 via-white to-white" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50 via-white to-white pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 text-blue-700 px-3 py-1 text-xs font-medium">
               <Star className="h-4 w-4 fill-current" /> Inspiring minds. Building futures.
             </div>
@@ -32,13 +33,14 @@ export default function Hero() {
               </a>
             </div>
           </div>
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-200 bg-gradient-to-br from-blue-600 to-indigo-600">
-              <img
-                src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1600&auto=format&fit=crop"
-                alt="Students collaborating in a bright classroom"
-                className="h-full w-full object-cover mix-blend-overlay opacity-90"
+
+          <div className="relative h-[420px] md:h-[520px]">
+            <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-200 bg-white">
+              <Spline
+                scene="https://prod.spline.design/a6HhFsV3-DN9Z-yP/scene.splinecode"
+                style={{ width: "100%", height: "100%" }}
               />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white shadow-lg ring-1 ring-slate-200 rounded-xl px-4 py-3 flex items-center gap-3">
               <div className="h-10 w-10 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold">98%</div>
